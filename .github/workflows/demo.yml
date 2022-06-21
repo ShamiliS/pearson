@@ -23,9 +23,3 @@ jobs:
         with:
           name: screenshots-in-chrome
           path: cypress/screenshots
-          
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
-        with:
-          upload_to: github_branch
-          capture_changed_html_files: no
