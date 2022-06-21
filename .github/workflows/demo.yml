@@ -12,6 +12,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          working-directory: ./
           spec: cypress/e2e/spec.cy.js
           build: npm run build
           start: npm start
