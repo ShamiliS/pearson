@@ -18,7 +18,7 @@ describe('Register in pearson application', () => {
     cy.get(homepage.btn_allow_all_cookie).click()
   })
 
-  it.skip('Create an account in pearson portal', () => {
+  it('Create an account in pearson portal', () => {
     cy.get('.userNav__button span').click()
     cy.wait(1000)
     cy.get(homepage.edt_firstname).scrollIntoView().should('be.visible')
@@ -33,7 +33,7 @@ describe('Register in pearson application', () => {
     cy.get(homepage.btn_successful_login).should('not.contain.text','Sign in')
   })
 
-  it.skip('Create an account in pearson portal with existing emailID', () => {
+  it('Create an account in pearson portal with existing emailID', () => {
     cy.get('.userNav__button span').click()
     cy.wait(1000)
     cy.get(homepage.edt_firstname).scrollIntoView().should('be.visible')
@@ -60,7 +60,7 @@ describe('Register in pearson application', () => {
     cy.get(searchpage.lbl_search_count).should('contain.text',' results')
   }) 
 
-  it.skip('Select first item from title searched ', () => {
+  it('Select first item from title searched ', () => {
     cy.get(searchpage.icn_search).click()
     cy.fixture('createaccount.json').then((inputdata)=>{
       cy.get(searchpage.edt_search_text).type(`${inputdata.search_text}{Enter}`)
