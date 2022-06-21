@@ -1,0 +1,19 @@
+name: pearson demo
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          spec: cypress/e2e/spec.cy.js
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
+          
