@@ -14,7 +14,7 @@ describe('Register in pearson application', () => {
       cy.visit(inputdata.pearson_url)
     })
     cy.wait(10000)
-    cy.screenshot()
+    cy.screenshot({log: true})
     cy.get(homepage.btn_allow_all_cookie).click()
   })
 
