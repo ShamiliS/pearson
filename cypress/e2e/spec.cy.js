@@ -12,7 +12,7 @@ describe('Register in pearson application', () => {
     cy.fixture('createaccount.json').then((inputdata)=>{
       cy.visit(inputdata.pearson_url)
     })
-    cy.wait(5000)
+    cy.wait(10000)
     cy.get(homepage.btn_allow_all_cookie).click()
   })
 
