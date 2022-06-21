@@ -3,7 +3,7 @@ let alphabet = String.fromCharCode(...Array(123).keys()).slice(97);
 let numbers = String.fromCharCode(...Array(123).keys()).slice(48,58);
 var result = '';
 
-export function randomgenaratefirstname() {
+export function randomgenaratefirstname(){
     for (var i = 0; i < 10; i++) {
         result += alphabet.charAt(Math.floor(Math.random() * 5));
     }
