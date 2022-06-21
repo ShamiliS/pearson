@@ -13,7 +13,8 @@ describe('Register in pearson application', () => {
       cy.log(inputdata.pearson_url)
       cy.visit(inputdata.pearson_url)
     })
-    cy.wait(5000)
+    cy.wait(10000)
+    cy.screenshot()
     cy.get(homepage.btn_allow_all_cookie).click()
   })
 
