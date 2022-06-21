@@ -8,6 +8,6 @@ export const edt_password = '#passwordID'
 export const chk_accept_terms = '[id="acceptTermsOfUse"]'
 export const chk_marketingopt = '#marketingOptInError .c-checkbox .c-checkbox__check'
 export const btn_create_account = '.button-container .button--primary'
-export const btn_successful_login = '.userNav__button'
+export const btn_successful_login = '.userNav__button span'
 
 export const lbl_error_msg = '.c-alert__text'

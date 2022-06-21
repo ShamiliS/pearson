@@ -5,7 +5,7 @@ var result = '';
 
 export function randomgenaratefirstname() {
     for (var i = 0; i < 10; i++) {
-        result += alphabet.charAt(Math.floor(Math.random() * 10));
+        result += alphabet.charAt(Math.floor(Math.random() * 5));
     }
     const firstname = `${result}`
     return firstname
@@ -13,7 +13,7 @@ export function randomgenaratefirstname() {
 
 export function randomgenaratelastname() {
     for (var i = 0; i < 10; i++) {
-        result += alphabet.charAt(Math.floor(Math.random() * 10));
+        result += alphabet.charAt(Math.floor(Math.random() * 5));
     }
     const lastname = `${result}`
     return lastname

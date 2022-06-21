@@ -163,8 +163,7 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "cy:run": "cypress run",
-    "cypress:open": "cypress open"
+    "test": "cypress run"
   },
   "author": "Shamili Srinivasan",
   "license": "ISC"
