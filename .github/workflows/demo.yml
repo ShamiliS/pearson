@@ -14,18 +14,3 @@ jobs:
         with:
           build: npm run build
           start: npm start
-
-      - name: Chrome headless
-        uses: ./.github/workflows/demo.yml
-        with:
-          working-directory: cypress
-          browser: chrome
-          headless: true
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-headless-chrome
-          path: cypress/screenshots
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: chrome
