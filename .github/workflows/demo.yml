@@ -24,3 +24,5 @@ jobs:
           name: screenshots-in-chrome
           path: cypress/screenshots
           
+      - run: npx image-size cypress/screenshots/**/*.png
+        working-directory: cypress
