@@ -24,3 +24,8 @@ jobs:
           name: screenshots-in-chrome
           path: cypress/screenshots
           
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github.com/ShamiliS/pearson/tree/main/cypress
+          destination: screenshot-${{ matrix.os }}.png
