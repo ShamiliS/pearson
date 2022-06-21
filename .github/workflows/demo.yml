@@ -9,11 +9,15 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Build and run npm
+        run:
+          npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           build: npm run build
           start: npm start
           wait-on: 'http://localhost:3333'
+          
           spec: cypress/e2e/spec.cy.js
           
