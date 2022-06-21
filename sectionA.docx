@@ -3,3 +3,8 @@ Q: The web page has 3 distinct sections (Section1, Section2 and Section3), the l
 which will have high coverage?
 
 Answer:
+TestCases	Section1	 Section2	  Section3
+Test#1	  Published	 Published	Published
+Test#2	  Published	 Hidden	    Hidden
+Test#3	  Hidden	   Published	Hidden
+Test#4	  Hidden	   Hidden	    Published
