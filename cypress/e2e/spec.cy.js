@@ -10,6 +10,7 @@ describe('Register in pearson application', () => {
   beforeEach(()=>{
     cy.viewport(900, 550)
     cy.fixture('createaccount.json').then((inputdata)=>{
+      cy.log(inputdata.pearson_url)
       cy.visit(inputdata.pearson_url)
     })
     cy.wait(5000)
@@ -54,7 +55,7 @@ describe('Register in pearson application', () => {
     cy.get(searchpage.icn_search).click()
     cy.get(searchpage.edt_search_text).type('Business & Economics{Enter}')
     cy.wait(3000)
-    cy.get(searchpage.lbl_search_count).get('strong').should('have.text','1 - 25')
+    cy.get(`${searchpage.lbl_search_count} strong`).should('have.text','1 - 25')
     cy.get(searchpage.lbl_search_count).should('contain.text',' results')
   }) 
 
