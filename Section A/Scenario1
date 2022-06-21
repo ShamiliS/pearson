@@ -3,7 +3,22 @@ Q: The web page has 3 distinct sections (Section1, Section2 and Section3), the l
 (published and hidden) and an array type = L4(23) how do you effectively write test cases
 which will have high coverage?
 
-Answer:
+No of Factors = 3 (Section1, Section2 and Section3)
+No of Levels = 2 (published and hidden)
+Array Type = L4(23)
+
+1. Columns with the No. of factors
+Testcase 	Section1	Section2	Section3
+
+2. Enter the number of rows is equal to levels per factor. insert 3 rows for each level for section
+TestCases	    Section1	    Section2	    Section3
+Test_1
+Test_2
+Test_3
+Test_4
+
+3. Now split up the values in each levels
+
 TestCases	    Section1	    Section2	    Section3
 Test_1	      Published	    Published	    Published
 Test_2	      Published	    Hidden	      Hidden
