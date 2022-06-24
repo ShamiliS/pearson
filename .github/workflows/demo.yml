@@ -16,9 +16,6 @@ jobs:
           browser: chrome
           headless: false
           spec: cypress/e2e/spec.cy.js
-      - run: npm install
-      - run: npm run build --if-present
-      - run: npm test
       
       - uses: actions/upload-artifact@v2
         with:

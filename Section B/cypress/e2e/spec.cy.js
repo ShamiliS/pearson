@@ -51,15 +51,6 @@ describe('Register in pearson application', () => {
     cy.get(homepage.chk_marketingopt).click()
     cy.wait(1000)
     cy.get(homepage.btn_create_account).focus().click()
-    cy.get('iframe')
-            .first()
-            .its('0.contentDocument.body')
-            .should('not.be.undefined')
-            .and('not.be.empty')
-            .then(cy.wrap)
-            .find('#recaptcha-anchor')
-            .should('be.visible')
-            .click();
     cy.get(homepage.btn_successful_login).should('be.visible')
     cy.get(homepage.lbl_error_msg).then(($errormessage)=>{
       expect($errormessage.text()).to.contain('The username you have entered is already registered, please choose another one or reset your password to sign in.')
