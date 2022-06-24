@@ -1,4 +1,4 @@
-export const btn_allow_all_cookie = ':nth-child(3) .optanon-alert-box-bg  .optanon-alert-box-button-container .optanon-button-allow .optanon-alert-box-button-middle .optanon-allow-all'
+export const btn_allow_all_cookie = '[title="Accept cookies"]'
 export const btn_signin = '.userNav__button span'
 export const edt_firstname = '#firstName'
 export const edt_lastname = '#lastName'

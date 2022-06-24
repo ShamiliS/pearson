@@ -8,14 +8,17 @@ import * as searchpage from '../pages/searchpage'
 describe('Register in pearson application', () => {
 
   beforeEach(()=>{
+    cy.window().then((res) => {
+      res.onbeforeunload = null;
+    });
+    cy.clearCookies()
     cy.viewport(900, 550)
     cy.fixture('createaccount.json').then((inputdata)=>{
-      cy.log(inputdata.pearson_url)
       cy.visit(inputdata.pearson_url)
     })
-    cy.wait(10000)
-    cy.screenshot({log: true})
-    cy.get(homepage.btn_allow_all_cookie).click()
+    cy.waitUntil(() => cy.get('#alert-box-message').then(() => {
+      cy.get(homepage.btn_allow_all_cookie, { timeout: 60000 }).first().click({force: true});
+    }));
   })
 
   it('Create an account in pearson portal', () => {
@@ -26,8 +29,9 @@ describe('Register in pearson application', () => {
     cy.get(homepage.edt_lastname).type(randomgenaratelastname())
     cy.get(homepage.edt_emailid).type(`${randomgenarateemailID(7)}@pearson.com`)
     cy.get(homepage.edt_password).type('Password@1', { log: false })
-    cy.get(homepage.chk_accept_terms).click({force: true})
+    cy.get(homepage.chk_accept_terms).click({force:true})
     cy.get(homepage.chk_marketingopt).click()
+    cy.wait(1000)
     cy.get(homepage.btn_create_account).click()
     cy.wait(3000)
     cy.get(homepage.btn_successful_login).should('not.contain.text','Sign in')
@@ -45,7 +49,17 @@ describe('Register in pearson application', () => {
     cy.get(homepage.edt_password).type('Password@1', { log: false })
     cy.get(homepage.chk_accept_terms).click({force: true})
     cy.get(homepage.chk_marketingopt).click()
-    cy.get(homepage.btn_create_account).click()
+    cy.wait(1000)
+    cy.get(homepage.btn_create_account).focus().click()
+    cy.get('iframe')
+            .first()
+            .its('0.contentDocument.body')
+            .should('not.be.undefined')
+            .and('not.be.empty')
+            .then(cy.wrap)
+            .find('#recaptcha-anchor')
+            .should('be.visible')
+            .click();
     cy.get(homepage.btn_successful_login).should('be.visible')
     cy.get(homepage.lbl_error_msg).then(($errormessage)=>{
       expect($errormessage.text()).to.contain('The username you have entered is already registered, please choose another one or reset your password to sign in.')
@@ -67,7 +81,7 @@ describe('Register in pearson application', () => {
     })
     cy.wait(2000)
     cy.get(searchpage.lst_firstitem_in_search).then(($productname)=>{
-      selectedproduct = $productname.text()
+      let selectedproduct = $productname.text()
       cy.get(searchpage.lst_firstitem_in_search).click()
       cy.wait(2000)
       cy.get(searchpage.lbl_page_heading).then(($producttitle)=>{

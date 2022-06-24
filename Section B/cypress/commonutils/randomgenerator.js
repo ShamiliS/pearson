@@ -1,10 +1,10 @@
 let caps = String.fromCharCode(...Array(123).keys()).slice(65,91);
 let alphabet = String.fromCharCode(...Array(123).keys()).slice(97);
 let numbers = String.fromCharCode(...Array(123).keys()).slice(48,58);
-var result = '';
 
 export function randomgenaratefirstname(){
-    for (var i = 0; i < 10; i++) {
+    var result = '';
+    for (var i = 0; i < 5; i++) {
         result += alphabet.charAt(Math.floor(Math.random() * 5));
     }
     const firstname = `${result}`
@@ -12,7 +12,8 @@ export function randomgenaratefirstname(){
 }
 
 export function randomgenaratelastname() {
-    for (var i = 0; i < 10; i++) {
+    var result = '';
+    for (var i = 0; i < 5; i++) {
         result += alphabet.charAt(Math.floor(Math.random() * 5));
     }
     const lastname = `${result}`
@@ -20,6 +21,7 @@ export function randomgenaratelastname() {
 }
 
 export function randomgenarateemailID(length) {
+    var result = '';
     let randomcharacters = alphabet+caps+numbers
     var charactersLength = randomcharacters.length;
     for (var i = 0; i < length; i++) {

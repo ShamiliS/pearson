@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^10.1.0",
+    "cypress": "^10.2.0",
+    "cypress-wait-until": "^1.7.2",
     "cypress-xpath": "^1.6.2"
   },
   "name": "pearson",
@@ -164,7 +165,7 @@
   },
   "scripts": {
     "test": "cypress run --headless --browser chrome",
-    "start":"cypress open"
+    "start": "cypress open"
   },
   "author": "Shamili Srinivasan",
   "license": "ISC"
