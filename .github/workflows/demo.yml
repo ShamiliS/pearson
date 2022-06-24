@@ -12,6 +12,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          working-directory: Section B
           browser: chrome
           headless: false
           spec: cypress/e2e/spec.cy.js
